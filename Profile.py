@@ -97,6 +97,8 @@ for i in range(0,len(Ltype)-1):
     y = y[indx]
     beta = beta[indx]
     
+# plot profile
+    
 # create figure and axis objects with subplots()
 fig,ax = plt.subplots()
 # make a plot
@@ -114,5 +116,15 @@ ax2.plot(L, beta)
 ax2.set_xlabel("L[m]", fontsize = 14)
 # set y-axis label
 ax2.set_ylabel("beta[rad]", fontsize = 14)
+
+# text output
+
+z = np.zeros((len(x),1));
+
+file = open("plan_profile_check.scr", "w");
+file.write("_MULTIPLE _POINT \n")
+for i in range(0,len(x)):
+    file.write(str(x[i]) + ',' + str(y[i]) + ',0 \n')
+file.close()
 
 
