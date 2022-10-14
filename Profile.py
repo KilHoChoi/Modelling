@@ -124,7 +124,8 @@ z = np.zeros((len(x),1));
 file = open("plan_profile_check.scr", "w");
 file.write("_MULTIPLE _POINT \n")
 for i in range(0,len(x)):
-    file.write(str(x[i]) + ',' + str(y[i]) + ',0 \n')
+    file.write(str(round(x[i],2)) + ',' + str(round(y[i],2)) + ',0 \n')
 file.close()
+
 
 
