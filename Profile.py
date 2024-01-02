@@ -26,6 +26,7 @@ V_veh = InputData['Vd']
 
 # Plan profile
 dL = 2; # Length increment [m]
+output_digit = 2;
 
 # 선형 초기 값 설정
 L = np.array([0]);  # 길이
@@ -121,10 +122,10 @@ ax2.set_ylabel("beta[rad]", fontsize = 14)
 
 z = np.zeros((len(x),1));
 
-file = open("plan_profile_check.scr", "w");
+file = open("plan_profile_check.txt", "w");
 file.write("_MULTIPLE _POINT \n")
 for i in range(0,len(x)):
-    file.write(str(round(x[i],2)) + ',' + str(round(y[i],2)) + ',0 \n')
+    file.write(str(round(x[i],output_digit)) + ',' + str(round(y[i],output_digit)) + ',0 \n')
 file.close()
 
 
